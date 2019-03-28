@@ -41,16 +41,10 @@ public class CustomerTest extends TestCase {
         equalsFile("1st Output", "outputChange", dinsdale.statement());
     }
 
-    /*
-    public void testHtml() throws Exception {
-        equalsFile("1st Output", "outputHtml", dinsdale.htmlStatement());
-    }
-    */
-    	
     private void equalsFile(String message, String fileName, String actualValue) throws IOException{
         BufferedReader file = new BufferedReader (new FileReader (GOLD_PATH + '/' + fileName));
         BufferedReader actualStream = new BufferedReader (new StringReader (actualValue));
-        String thisFileLine = null;
+        String thisFileLine;
         while  ((thisFileLine = file.readLine()) != null) {
             assertEquals ("in file: " + fileName, thisFileLine, actualStream.readLine());
         }
