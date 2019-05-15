@@ -1,25 +1,23 @@
 package com.step.movie_rentals;
 
-public class Movie {
-	public static final int  CHILDRENS = 2;
-	public static final int  REGULAR = 0;
-	public static final int  NEW_RELEASE = 1;
+class Movie {
+	public void setMovieDetails(MovieDetails movieDetails) {
+		this.movieDetails = movieDetails;
+	}
 
+	private MovieDetails movieDetails;
 	private String title;
-	private int priceCode;
 
-	public Movie(String title, int priceCode) {
+
+	Movie(String title, MovieDetails movieDetails) {
 		this.title = title;
-		this.priceCode = priceCode;
+		this.movieDetails = movieDetails;
 	}
 
-	int getPriceCode() {
-		return priceCode;
+	public MovieDetails getMovieDetails() {
+		return movieDetails;
 	}
 
-	public void setPriceCode(int arg) {
-    	priceCode = arg;
-	}
 
 	String getTitle() {
 		return title;
